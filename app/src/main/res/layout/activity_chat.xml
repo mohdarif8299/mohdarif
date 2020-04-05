@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="sendMessage"
+    android:orientation="vertical"
+    tools:context=".ChatActivity">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:minHeight="60dp"
+        android:padding="5dp">
+
+        <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:src="@drawable/back_arrow" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="The untold love story"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/video"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:src="@drawable/video" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f0f0f0"
+        android:layout_below="@id/header"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/names"
+    android:minHeight="50dp"
+    android:background="#ffffff"
+    android:layout_below="@+id/header"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kabir"
+        android:layout_weight="1"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:padding="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preeti"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:layout_gravity="right"
+        />
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/add_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/names">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:onClick="sendMessage"
+            android:orientation="vertical"
+            android:overScrollMode="ifContentScrolls"
+            app:stackFromEnd="true" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/open_dialog"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-30dp"
+        android:padding="10dp"
+        android:src="@drawable/open_dialog" />
+</RelativeLayout>
